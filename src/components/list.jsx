@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Product from "./product";
+import "./component.css";
+import Basket from "./basket";
 
 const List = ({ data }) => {
-  console.log(data);
+  const [basket, setBasket] = useState([]);
   return (
     <div className="list d-flex flex-wrap flex-column flex-sm-row align-items-center  ">
       {data.map((item) => (
@@ -13,8 +15,10 @@ const List = ({ data }) => {
           id={item.id}
           category={item.category}
           image={item.image}
+          setBasket={setBasket}
         />
       ))}
+      <Basket basket={basket} />
     </div>
   );
 };

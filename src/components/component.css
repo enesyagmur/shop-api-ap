@@ -1,4 +1,12 @@
 .product:hover {
   background-color: rgb(251, 251, 251);
 }
+.basket {
+  position: absolute;
+  position: fixed;
+  width: 50px;
+  height: 70px;
 
+  right: 10px;
+  top: 20px;
+}
