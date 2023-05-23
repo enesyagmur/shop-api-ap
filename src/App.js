@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import List from "./components/list";
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   const fetchData = () => {
     fetch("https://fakestoreapi.com/products")
@@ -16,7 +17,12 @@ function App() {
     fetchData();
   }, []);
 
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <h1>apiSHOP</h1>
+      <List data={data} />
+    </div>
+  );
 }
 
 export default App;
