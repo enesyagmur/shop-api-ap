@@ -20,7 +20,7 @@ const List = ({ data }) => {
           key={item.id}
         />
       ))}
-      <Basket basket={basket} />
+      <Basket basket={basket} setBasket={setBasket} />
     </div>
   );
 };
