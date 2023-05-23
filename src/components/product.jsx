@@ -1,7 +1,11 @@
 import React from "react";
 import "./component.css";
 
-const Product = ({ title, price, category, image, setBasket }) => {
+const Product = ({ title, price, category, image, basket, setBasket }) => {
+  const addToBasket = () => {
+    setBasket([...basket, price]);
+  };
+
   return (
     <div
       style={{ height: "350px" }}
@@ -12,7 +16,11 @@ const Product = ({ title, price, category, image, setBasket }) => {
 
       <p> {category}</p>
 
-      <button style={{ width: "100px" }} className="border p-1">
+      <button
+        onClick={addToBasket}
+        style={{ width: "100px" }}
+        className="border p-1"
+      >
         {price}$
       </button>
     </div>
