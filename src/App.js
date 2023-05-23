@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import "./App.css";
 import List from "./components/list";
+import Header from "./components/header";
 
 function App() {
   const [data, setData] = useState([]);
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>apiSHOP</h1>
+      <Header data={data} setData={setData} />
       <List data={data} />
     </div>
   );
