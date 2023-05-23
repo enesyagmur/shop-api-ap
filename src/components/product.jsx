@@ -1,13 +1,20 @@
 import React from "react";
+import "./component.css";
 
-const Product = ({ title, price, description, category }) => {
+const Product = ({ title, price, category, image }) => {
   return (
-    <div className="product">
-      <h5>{title}</h5>
-      <p>{description}</p>
+    <div
+      style={{ height: "350px" }}
+      className="product d-flex flex-column w-25 p-3 m-5 justify-content-evenly align-items-center border"
+    >
+      <img style={{ width: "120px", height: "110px" }} src={image} />
+      <p>{title}</p>
+
       <p> {category}</p>
 
-      <button>{price}$</button>
+      <button style={{ width: "100px" }} className="border p-1">
+        {price}$
+      </button>
     </div>
   );
 };
