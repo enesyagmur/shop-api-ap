@@ -29,20 +29,16 @@ const Header = ({ data, setData, copyData }) => {
   };
 
   return (
-    <div className=" border border-bottom p-3">
-      <h1>Shop</h1>
-      <div className="d-flex justify-content-between p-2">
-        <div>
-          <button onClick={() => category(kadin)}>Kadın</button>
-          <button onClick={() => category(erkek)}>Erkek</button>
-          <button onClick={() => category(aksesuar)}>Aksesuar</button>
-          <button onClick={() => category(elektronik)}>Elektronik</button>
-          <button onClick={temizle}>Sıfırla</button>
-        </div>
-        <div>
-          <button onClick={artan}>artan</button>
-          <button onClick={azalan}>azalan</button>
-        </div>
+    <div className="header border border-bottom p-3">
+      <h1>SHOP</h1>
+      <div className="d-flex p-2 justify-content-center">
+        <button onClick={() => category(kadin)}>Kadın</button>
+        <button onClick={() => category(erkek)}>Erkek</button>
+        <button onClick={() => category(aksesuar)}>Aksesuar</button>
+        <button onClick={() => category(elektronik)}>Elektronik</button>
+        <button onClick={artan}>Artan</button>
+        <button onClick={azalan}>Azalan</button>
+        <button onClick={temizle}>Sıfırla</button>
       </div>
     </div>
   );
