@@ -6,12 +6,14 @@ import Header from "./components/header";
 
 function App() {
   const [data, setData] = useState([]);
+  const [copyData, setcopyData] = useState([]);
 
   const fetchData = () => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((veri) => {
         setData(veri);
+        setcopyData(veri);
       });
   };
 
@@ -21,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header data={data} setData={setData} />
+      <Header data={data} setData={setData} copyData={copyData} />
       <List data={data} />
     </div>
   );

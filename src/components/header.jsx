@@ -1,7 +1,7 @@
 import React from "react";
 import "./component.css";
 
-const Header = ({ data, setData }) => {
+const Header = ({ data, setData, copyData }) => {
   const artan = () => {
     const newArr = [...data];
     newArr.sort((a, b) => a.price - b.price);
@@ -24,6 +24,10 @@ const Header = ({ data, setData }) => {
     setData(newArr.filter((item) => item.category === categoryName));
   };
 
+  const temizle = () => {
+    setData(copyData);
+  };
+
   return (
     <div className=" border border-bottom p-3">
       <h1>Shop</h1>
@@ -33,6 +37,7 @@ const Header = ({ data, setData }) => {
           <button onClick={() => category(erkek)}>Erkek</button>
           <button onClick={() => category(aksesuar)}>Aksesuar</button>
           <button onClick={() => category(elektronik)}>Elektronik</button>
+          <button onClick={temizle}>Sıfırla</button>
         </div>
         <div>
           <button onClick={artan}>artan</button>
